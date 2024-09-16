@@ -1,0 +1,137 @@
+@model dvdApp.Models.Dvd
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dvd</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TitreOriginal" class="control-label"></label>
+                <input asp-for="TitreOriginal" class="form-control" />
+                <span asp-validation-for="TitreOriginal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TitreFrancais" class="control-label"></label>
+                <input asp-for="TitreFrancais" class="form-control" />
+                <span asp-validation-for="TitreFrancais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnneeSortie" class="control-label"></label>
+                <input asp-for="AnneeSortie" class="form-control" />
+                <span asp-validation-for="AnneeSortie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategorieId" class="control-label"></label>
+                <select asp-for="CategorieId" class ="form-control" asp-items="ViewBag.CategorieId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DerniereMiseAJour" class="control-label"></label>
+                <input asp-for="DerniereMiseAJour" class="form-control" />
+                <span asp-validation-for="DerniereMiseAJour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiseAJourEffectueePar" class="control-label"></label>
+                <input asp-for="MiseAJourEffectueePar" class="form-control" />
+                <span asp-validation-for="MiseAJourEffectueePar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplements" class="control-label"></label>
+                <input asp-for="Supplements" class="form-control" />
+                <span asp-validation-for="Supplements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duree" class="control-label"></label>
+                <input asp-for="Duree" class="form-control" />
+                <span asp-validation-for="Duree" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EstOriginal" /> @Html.DisplayNameFor(model => model.EstOriginal)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Format" class="control-label"></label>
+                <input asp-for="Format" class="form-control" />
+                <span asp-validation-for="Format" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePochette" class="control-label"></label>
+                <input asp-for="ImagePochette" class="form-control" />
+                <span asp-validation-for="ImagePochette" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Langue" class="control-label"></label>
+                <input asp-for="Langue" class="form-control" />
+                <span asp-validation-for="Langue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreDisques" class="control-label"></label>
+                <input asp-for="NombreDisques" class="form-control" />
+                <span asp-validation-for="NombreDisques" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Producteur" class="control-label"></label>
+                <input asp-for="Producteur" class="form-control" />
+                <span asp-validation-for="Producteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Realisateur" class="control-label"></label>
+                <input asp-for="Realisateur" class="form-control" />
+                <span asp-validation-for="Realisateur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActeursPrincipaux" class="control-label"></label>
+                <input asp-for="ActeursPrincipaux" class="form-control" />
+                <span asp-validation-for="ActeursPrincipaux" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resume" class="control-label"></label>
+                <input asp-for="Resume" class="form-control" />
+                <span asp-validation-for="Resume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SousTitres" class="control-label"></label>
+                <input asp-for="SousTitres" class="form-control" />
+                <span asp-validation-for="SousTitres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Propriétaire" class="control-label"></label>
+                <input asp-for="Propriétaire" class="form-control" />
+                <span asp-validation-for="Propriétaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emprunteur" class="control-label"></label>
+                <input asp-for="Emprunteur" class="form-control" />
+                <span asp-validation-for="Emprunteur" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EstVersionEtendue" /> @Html.DisplayNameFor(model => model.EstVersionEtendue)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EstVisible" /> @Html.DisplayNameFor(model => model.EstVisible)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
