@@ -12,8 +12,8 @@ using dvdApp.Data;
 namespace dvdApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240915235441_IntialCreate")]
-    partial class IntialCreate
+    [Migration("20240916040959_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,7 +251,6 @@ namespace dvdApp.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ActeursPrincipaux")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("AnneeSortie")
@@ -267,7 +266,6 @@ namespace dvdApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Emprunteur")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<bool>("EstOriginal")
@@ -280,50 +278,39 @@ namespace dvdApp.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Format")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ImagePochette")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Langue")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("MiseAJourEffectueePar")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("NombreDisques")
                         .HasColumnType("int");
 
                     b.Property<string>("Producteur")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Propriétaire")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Realisateur")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Resume")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("SousTitres")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Supplements")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitreFrancais")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitreOriginal")
