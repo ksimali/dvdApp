@@ -44,9 +44,14 @@ public class Program
 
         app.UseAuthorization();
 
+        // Routes
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+        app.MapControllerRoute(
+            name: "dvds",
+            pattern: "Dvds",
+            defaults: new { controller = "Dvd", action = "Index" });
         app.MapRazorPages();
 
         app.Run();

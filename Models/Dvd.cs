@@ -55,6 +55,12 @@ namespace dvdApp.Models
         public bool EstVisible { get; set; }
 
         public virtual Categorie? Categorie { get; set; }
+
+        public Dvd()
+        {
+            ActeursPrincipaux = new List<string>();
+            Supplements = new List<string>();
+        }
     }
 }
 

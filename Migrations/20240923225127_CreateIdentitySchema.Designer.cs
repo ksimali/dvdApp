@@ -12,7 +12,7 @@ using dvdApp.Data;
 namespace dvdApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240923205317_CreateIdentitySchema")]
+    [Migration("20240923225127_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         /// <inheritdoc />

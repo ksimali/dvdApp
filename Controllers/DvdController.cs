@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using dvdApp.Data;
 using dvdApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace dvdApp.Controllers
 {
     public class DvdController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public DvdController(ApplicationDbContext context)
+        public DvdController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager; // Initialisez le UserManager
         }
 
         // GET: Dvd
@@ -65,7 +68,8 @@ namespace dvdApp.Controllers
                 dvd.DerniereMiseAJour = DateTime.Now;
 
                 // Récupérer l'utilisateur courant (exemple utilisant l'authentification ASP.NET)
-                //dvd.MiseAJourEffectueePar = User.Identity.Name ?? "Utilisateur inconnu";
+                var user = await _userManager.GetUserAsync(User);
+                dvd.MiseAJourEffectueePar = user?.UserName ?? "Utilisateur inconnu";
 
                 // Sauvegarder le DVD dans la base de données
                 _context.Add(dvd);
