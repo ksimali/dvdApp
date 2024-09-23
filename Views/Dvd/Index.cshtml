@@ -4,79 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Affichage de tous les DVDs</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Ajout DvD</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TitreOriginal)
+                @Html.DisplayNameFor(model => model.ImagePochette)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TitreFrancais)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AnneeSortie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DerniereMiseAJour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MiseAJourEffectueePar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Supplements)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duree)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstOriginal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Format)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagePochette)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Langue)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreDisques)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Producteur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Realisateur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActeursPrincipaux)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Resume)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SousTitres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Propriétaire)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Emprunteur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstVersionEtendue)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstVisible)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categorie)
             </th>
             <th></th>
         </tr>
@@ -85,70 +28,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.TitreOriginal)
+                @Html.DisplayFor(modelItem => item.ImagePochette)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TitreFrancais)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AnneeSortie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DerniereMiseAJour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MiseAJourEffectueePar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supplements)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duree)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstOriginal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Format)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagePochette)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Langue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreDisques)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producteur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Realisateur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActeursPrincipaux)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Resume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SousTitres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Propriétaire)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Emprunteur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstVersionEtendue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstVisible)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categorie.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

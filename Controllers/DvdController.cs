@@ -61,8 +61,16 @@ namespace dvdApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Assigner la date de mise à jour actuelle
+                dvd.DerniereMiseAJour = DateTime.Now;
+
+                // Récupérer l'utilisateur courant (exemple utilisant l'authentification ASP.NET)
+                //dvd.MiseAJourEffectueePar = User.Identity.Name ?? "Utilisateur inconnu";
+
+                // Sauvegarder le DVD dans la base de données
                 _context.Add(dvd);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategorieId"] = new SelectList(_context.Categories, "Id", "Name", dvd.CategorieId);

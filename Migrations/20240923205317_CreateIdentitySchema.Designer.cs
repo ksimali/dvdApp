@@ -12,8 +12,8 @@ using dvdApp.Data;
 namespace dvdApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240916040959_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240923205317_CreateIdentitySchema")]
+    partial class CreateIdentitySchema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -253,16 +253,16 @@ namespace dvdApp.Migrations
                     b.Property<string>("ActeursPrincipaux")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("AnneeSortie")
+                    b.Property<int?>("AnneeSortie")
                         .HasColumnType("int");
 
                     b.Property<int>("CategorieId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DerniereMiseAJour")
+                    b.Property<DateTime?>("DerniereMiseAJour")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Duree")
+                    b.Property<int?>("Duree")
                         .HasColumnType("int");
 
                     b.Property<string>("Emprunteur")
@@ -289,7 +289,7 @@ namespace dvdApp.Migrations
                     b.Property<string>("MiseAJourEffectueePar")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("NombreDisques")
+                    b.Property<int?>("NombreDisques")
                         .HasColumnType("int");
 
                     b.Property<string>("Producteur")
@@ -311,10 +311,10 @@ namespace dvdApp.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitreFrancais")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitreOriginal")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

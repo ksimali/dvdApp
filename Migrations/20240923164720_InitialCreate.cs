@@ -217,18 +217,18 @@ namespace dvdApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    TitreOriginal = table.Column<string>(type: "longtext", nullable: false)
+                    TitreOriginal = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TitreFrancais = table.Column<string>(type: "longtext", nullable: true)
+                    TitreFrancais = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    AnneeSortie = table.Column<int>(type: "int", nullable: false),
+                    AnneeSortie = table.Column<int>(type: "int", nullable: true),
                     CategorieId = table.Column<int>(type: "int", nullable: false),
-                    DerniereMiseAJour = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DerniereMiseAJour = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     MiseAJourEffectueePar = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Supplements = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Duree = table.Column<int>(type: "int", nullable: false),
+                    Duree = table.Column<int>(type: "int", nullable: true),
                     EstOriginal = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     Format = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -236,7 +236,7 @@ namespace dvdApp.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Langue = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NombreDisques = table.Column<int>(type: "int", nullable: false),
+                    NombreDisques = table.Column<int>(type: "int", nullable: true),
                     Producteur = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Realisateur = table.Column<string>(type: "longtext", nullable: true)
