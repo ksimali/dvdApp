@@ -13,6 +13,9 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="DerniereMiseAJour" />
+            <input type="hidden" asp-for="MiseAJourEffectueePar" />
+
             <div class="form-group">
                 <label asp-for="TitreOriginal" class="control-label"></label>
                 <input asp-for="TitreOriginal" class="form-control" />
@@ -33,16 +36,7 @@
                 <select asp-for="CategorieId" class="form-control" asp-items="ViewBag.CategorieId"></select>
                 <span asp-validation-for="CategorieId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DerniereMiseAJour" class="control-label"></label>
-                <input asp-for="DerniereMiseAJour" class="form-control" />
-                <span asp-validation-for="DerniereMiseAJour" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiseAJourEffectueePar" class="control-label"></label>
-                <input asp-for="MiseAJourEffectueePar" class="form-control" />
-                <span asp-validation-for="MiseAJourEffectueePar" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="Supplements" class="control-label"></label>
                 <input asp-for="Supplements" class="form-control" />

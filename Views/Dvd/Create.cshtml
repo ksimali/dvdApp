@@ -12,6 +12,8 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="DerniereMiseAJour" type="hidden" />
+            <input asp-for="MiseAJourEffectueePar" type="hidden" />
             <div class="form-group">
                 <label asp-for="TitreOriginal" class="control-label"></label>
                 <input asp-for="TitreOriginal" class="form-control" />
@@ -29,18 +31,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategorieId" class="control-label"></label>
-                <select asp-for="CategorieId" class ="form-control" asp-items="ViewBag.CategorieId"></select>
+                <select asp-for="CategorieId" class="form-control" asp-items="ViewBag.CategorieId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="DerniereMiseAJour" class="control-label"></label>
-                <input asp-for="DerniereMiseAJour" class="form-control" readonly />
-                <span asp-validation-for="DerniereMiseAJour" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiseAJourEffectueePar" class="control-label"></label>
-                <input asp-for="MiseAJourEffectueePar" class="form-control" readonly />
-                <span asp-validation-for="MiseAJourEffectueePar" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="Supplements" class="control-label"></label>
                 <input asp-for="Supplements" class="form-control" />
