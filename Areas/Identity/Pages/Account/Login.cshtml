@@ -9,6 +9,12 @@
 <div class="row">
     <div class="col-md-4">
         <section>
+            <div>
+                @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+                {
+                    <div class="alert alert-info">@TempData["StatusMessage"]</div>
+                }
+            </div>
             <form id="account" method="post">
                 <h2>Use a local account to log in.</h2>
                 <hr />

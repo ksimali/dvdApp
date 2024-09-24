@@ -9,6 +9,8 @@
 <p>
     <a asp-action="Create">Ajout DvD</a>
 </p>
+
+<!-- Listing des DVDs-->
 <table class="table">
     <thead>
         <tr>
@@ -25,23 +27,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagePochette)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TitreFrancais)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Emprunteur)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImagePochette)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TitreFrancais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emprunteur)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

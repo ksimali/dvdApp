@@ -44,7 +44,18 @@ namespace dvdApp.Areas.Identity.Pages.Account
 
             code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
             var result = await _userManager.ConfirmEmailAsync(user, code);
-            StatusMessage = result.Succeeded ? "Thank you for confirming your email." : "Error confirming your email.";
+
+            // Utiliser TempData pour passer le message de confirmation
+            StatusMessage = result.Succeeded ? "Merci d'avoir confirmé votre adresse e-mail." : "Erreur lors de la confirmation de votre adresse e-mail.";
+
+            if (result.Succeeded)
+            {
+                // Attendre un court instant avant de rediriger
+                await Task.Delay(2000); // 3000 millisecondes = 3 secondes
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
+
+            // Retourner la page actuelle si la confirmation a échoué
             return Page();
         }
     }

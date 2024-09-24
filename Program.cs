@@ -19,8 +19,18 @@ public class Program
         options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+        // Configuration d'Identity et des cookies d'authentification
         builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        // Configuration des cookies d'authentification
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = "/Identity/Account/Login";  // Redirection après déconnexion
+            options.LogoutPath = "/Identity/Account/Logout";
+            options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+        });
+
         builder.Services.AddControllersWithViews();
 
         var app = builder.Build();
@@ -42,6 +52,8 @@ public class Program
 
         app.UseRouting();
 
+        // Utilisation de l'authentification et de l'autorisation
+        app.UseAuthentication();
         app.UseAuthorization();
 
         // Routes

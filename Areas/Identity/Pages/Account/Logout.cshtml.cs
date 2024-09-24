@@ -3,6 +3,7 @@
 #nullable disable
 
 using System;
+using System.Drawing;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -27,16 +28,14 @@ namespace dvdApp.Areas.Identity.Pages.Account
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            if (returnUrl != null)
+
+            if (!User.Identity.IsAuthenticated)
             {
-                return LocalRedirect(returnUrl);
+                _logger.LogInformation("User is successfully logged out.");
             }
-            else
-            {
-                // This needs to be a redirect so that the browser performs a new
-                // request and the identity for the user gets updated.
-                return RedirectToPage();
-            }
+
+            // Redirige vers la page de connexion
+            return RedirectToPage("/Account/Login", new { area = "Identity" });
         }
     }
 }
