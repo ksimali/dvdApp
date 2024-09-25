@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using dvdApp.Data;
 using dvdApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dvdApp.Controllers
 {
+    [Authorize]
     public class CategorieController : Controller
     {
         private readonly ApplicationDbContext _context;

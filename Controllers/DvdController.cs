@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using dvdApp.Data;
 using dvdApp.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dvdApp.Controllers
 {
+    [Authorize]
     public class DvdController : Controller
     {
         private readonly ApplicationDbContext _context;
