@@ -44,7 +44,7 @@
                     @Html.DisplayFor(modelItem => item.Emprunteur)
                 </td>
                 <td>
-                    @if (item.Emprunteur == currentUser)
+                    @if (item.Proprietaire == currentUser)
                     {
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
@@ -53,6 +53,8 @@
                     else
                     {
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                        <a asp-action="SendEmail" asp-route-id="@item.Id" class="btn btn-secondary">Courriel</a>
+                        <a asp-action="Appropriate" asp-route-id="@item.Id" class="btn btn-success">Appropriation</a>
                     }
                 </td>
             </tr>
