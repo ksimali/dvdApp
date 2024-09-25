@@ -97,7 +97,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Driss",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "Keanu Reeves, Laurence Fishburne"
             },
             new Dvd
@@ -121,7 +121,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Driss",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon2.jpg",
                 ActeursPrincipaux = "Marlon Brando, Al Pacino" 
             },
             new Dvd
@@ -145,7 +145,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Driss",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon3.jpg",
                 ActeursPrincipaux = "Leonardo DiCaprio, Joseph Gordon-Levitt"
             },
             new Dvd
@@ -169,7 +169,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Driss",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "John Travolta, Samuel L. Jackson"
             },
             new Dvd
@@ -193,7 +193,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Driss",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon2.jpg",
                 ActeursPrincipaux = "Leonardo DiCaprio, Kate Winslet"
             },
             new Dvd
@@ -217,7 +217,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon3.jpg",
                 ActeursPrincipaux = "Mark Hamill, Harrison Ford"
 
             },
@@ -243,7 +243,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "Liam Neeson, Ben Kingsley"
 
             },
@@ -268,7 +268,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon2.jpg",
                 ActeursPrincipaux = "Christian Bale, Heath Ledger"
             },
             new Dvd
@@ -292,7 +292,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon3.jpg",
                 ActeursPrincipaux = "Russell Crowe, Joaquin Phoenix"
             },
             new Dvd
@@ -316,7 +316,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "Sigourney Weaver, Tom Skerritt"
             },
 
@@ -341,7 +341,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Cassim",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon2.jpg",
                 ActeursPrincipaux = "Tom Hanks, Robin Wright"
             },
             new Dvd
@@ -365,7 +365,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Rachid",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon3.jpg",
                 ActeursPrincipaux = "Jodie Foster, Anthony Hopkins"
             },
             new Dvd
@@ -389,7 +389,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Rachid",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "Tim Robbins, Morgan Freeman"
             },
             new Dvd
@@ -413,7 +413,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Rachid",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon2.jpg",
                 ActeursPrincipaux = "Matthew Broderick, James Earl Jones"
             },
             new Dvd
@@ -437,7 +437,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Rachid",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon3.jpg",
                 ActeursPrincipaux = "Sam Neill, Laura Dern"
             },
             new Dvd
@@ -461,7 +461,7 @@ public class ApplicationDbContext : IdentityDbContext
                 Emprunteur = "Rachid",
                 MiseAJourEffectueePar = "Cassim",
                 SousTitres = "Français, English",
-                ImagePochette = "/wwwroot/img/icon1.jpg",
+                ImagePochette = "/img/icon1.jpg",
                 ActeursPrincipaux = "Ryan Gosling, Emma Stone"
             }
 

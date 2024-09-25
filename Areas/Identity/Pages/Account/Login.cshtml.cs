@@ -112,9 +112,9 @@ namespace dvdApp.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                // Identify whether the input is an email or a username (first name)
-                var user = await _userManager.FindByEmailAsync(Input.Identifier)
-                           ?? await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == Input.Identifier);
+                // Attempt to find the user by username
+                var user = await _userManager.Users
+                               .SingleOrDefaultAsync(u => u.UserName == Input.Identifier || u.Email == Input.Identifier);
 
                 if (user != null)
                 {
@@ -137,14 +137,14 @@ namespace dvdApp.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt. Please check your username and password.");
                         return Page();  // Redisplay login form with error message
                     }
                 }
                 else
                 {
                     // User not found, show invalid login error
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt. Please check your username and password.");
                     return Page();  // Redisplay login form with error message
                 }
             }
@@ -152,5 +152,6 @@ namespace dvdApp.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
     }
 }
