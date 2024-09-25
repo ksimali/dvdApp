@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     var currentUser = User.Identity?.Name;
+    int count = 0;
 }
 <h1>Affichage de tous les DVDs</h1>
 
@@ -14,6 +15,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.ImagePochette)
             </th>
@@ -28,8 +30,10 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-        {
+            {
+                count++;
             <tr>
+                <td>@count</td>
                 <td>
                     <img src="@item.ImagePochette" alt="pochette_film" width="100" height="100" />
                 </td>
