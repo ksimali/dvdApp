@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\img\" />
+    <Content Remove="Views\Dvd\DvdEnMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\img\" />

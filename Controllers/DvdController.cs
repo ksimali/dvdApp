@@ -31,6 +31,27 @@ namespace dvdApp.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        // GET: Dvd/DvdsEnMain
+        public async Task<IActionResult> DvdsEnMain()
+        {
+            // Retrieve the current user
+            var user = await _userManager.GetUserAsync(User);
+
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            // Fetch DVDs owned by the logged-in user
+            var dvds = await _context.Dvds
+                .Where(d => d.Emprunteur == user.UserName)
+                .Include(d => d.Categorie)
+                .ToListAsync();
+
+            return View(dvds);
+        }
+
+
         // GET: Dvd/Details/5
         public async Task<IActionResult> Details(int? id)
         {
