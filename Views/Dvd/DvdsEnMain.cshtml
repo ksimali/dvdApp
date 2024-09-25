@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "DvdEnMain";
     var currentUser = User.Identity?.Name;
+    int count = 0;
 }
 <h1>Affichage de vos DVDs</h1>
 
@@ -14,6 +15,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
             <th>
                 @Html.DisplayNameFor(model => model.First().ImagePochette) <!-- Use First() to access the property -->
             </th>
@@ -28,7 +30,9 @@
         {
             foreach (var dvd in Model)
             {
+                count ++;
                 <tr>
+                    <td>@count</td>
                     <td>
                         <img src="@dvd.ImagePochette" alt="pochette_film" width="100" height="100" />
                     </td>
