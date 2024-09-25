@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ksim/Desktop/webserver/asp.net/projets/dvdApp/dvdApp/wwwroot/img/icon1.jpg",
+      "PackagePath": "staticwebassets/img/icon1.jpg"
+    },
+    {
+      "Id": "/Users/ksim/Desktop/webserver/asp.net/projets/dvdApp/dvdApp/wwwroot/img/icon2.jpg",
+      "PackagePath": "staticwebassets/img/icon2.jpg"
+    },
+    {
+      "Id": "/Users/ksim/Desktop/webserver/asp.net/projets/dvdApp/dvdApp/wwwroot/img/icon3.jpg",
+      "PackagePath": "staticwebassets/img/icon3.jpg"
+    },
+    {
       "Id": "/Users/ksim/Desktop/webserver/asp.net/projets/dvdApp/dvdApp/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

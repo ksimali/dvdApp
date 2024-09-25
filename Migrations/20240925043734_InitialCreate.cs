@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace dvdApp.Migrations
 {
     /// <inheritdoc />
@@ -247,7 +249,7 @@ namespace dvdApp.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SousTitres = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Propriétaire = table.Column<string>(type: "longtext", nullable: true)
+                    Proprietaire = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Emprunteur = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -265,6 +267,87 @@ namespace dvdApp.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Action" },
+                    { 2, "Adolescent" },
+                    { 3, "Biographie" },
+                    { 4, "Cape et d'épée" },
+                    { 5, "Catastrophe" },
+                    { 6, "Chronique" },
+                    { 7, "Comédie de moeurs" },
+                    { 8, "Comédie d'horreur" },
+                    { 9, "Comédie dramatique" },
+                    { 10, "Comédie fantaisiste" },
+                    { 11, "Comédie musicale" },
+                    { 12, "Comédie policière" },
+                    { 13, "Comédie satirique" },
+                    { 14, "Comédie sentimentale" },
+                    { 15, "Comédie" },
+                    { 16, "Criminel" },
+                    { 17, "Danse" },
+                    { 18, "Dessins animés" },
+                    { 19, "Documentaire" },
+                    { 20, "Drame de guerre" },
+                    { 21, "Drame de moeurs" },
+                    { 22, "Drame d'horreur" },
+                    { 23, "Drame judiciaire" },
+                    { 24, "Drame musical" },
+                    { 25, "Drame poétique" },
+                    { 26, "Drame policier" },
+                    { 27, "Drame psychologique" },
+                    { 28, "Drame sentimental" },
+                    { 29, "Drame social" },
+                    { 30, "Drame" },
+                    { 31, "Espionnage" },
+                    { 32, "Expérimental" },
+                    { 33, "Fantastique" },
+                    { 34, "Film à sketches" },
+                    { 35, "Film d'animation" },
+                    { 36, "Film d'art martial" },
+                    { 37, "Historique" },
+                    { 38, "Horreur" },
+                    { 39, "Humoristique" },
+                    { 40, "Marionnettes" },
+                    { 41, "Mélodrame" },
+                    { 42, "Musical" },
+                    { 43, "Road movie" },
+                    { 44, "Romantique" },
+                    { 45, "Science-fiction" },
+                    { 46, "Série policière" },
+                    { 47, "Série TV" },
+                    { 48, "Spectacle d'humour" },
+                    { 49, "Spectacle musical" },
+                    { 50, "Suspense" },
+                    { 51, "Western" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Dvds",
+                columns: new[] { "Id", "ActeursPrincipaux", "AnneeSortie", "CategorieId", "DerniereMiseAJour", "Duree", "Emprunteur", "EstOriginal", "EstVersionEtendue", "EstVisible", "Format", "ImagePochette", "Langue", "MiseAJourEffectueePar", "NombreDisques", "Producteur", "Proprietaire", "Realisateur", "Resume", "SousTitres", "Supplements", "TitreFrancais", "TitreOriginal" },
+                values: new object[,]
+                {
+                    { 1, "Keanu Reeves, Laurence Fishburne", 1999, 4, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3440), 136, "Driss", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Joel Silver", "Cassim", "Lana Wachowski, Lilly Wachowski", "Un pirate informatique découvre une réalité alternative.", "Français, English", null, "La Matrice", "The Matrix" },
+                    { 2, "Marlon Brando, Al Pacino", 1972, 3, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3450), 175, "Driss", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 2, "Albert S. Ruddy", "Cassim", "Francis Ford Coppola", "L'histoire de la famille Corleone.", "Français, English", null, "Le Parrain", "The Godfather" },
+                    { 3, "Leonardo DiCaprio, Joseph Gordon-Levitt", 2010, 4, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3460), 148, "Driss", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Emma Thomas", "Cassim", "Christopher Nolan", "Un voleur s'infiltre dans les rêves.", "Français, English", null, "Inception", "Inception" },
+                    { 4, "John Travolta, Samuel L. Jackson", 1994, 2, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3470), 154, "Driss", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Lawrence Bender", "Cassim", "Quentin Tarantino", "Des histoires entrecroisées dans le monde du crime.", "Français, English", null, "Pulp Fiction", "Pulp Fiction" },
+                    { 5, "Leonardo DiCaprio, Kate Winslet", 1997, 7, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3480), 195, "Driss", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 2, "James Cameron", "Cassim", "James Cameron", "Une romance tragique à bord du Titanic.", "Français, English", null, "Titanic", "Titanic" },
+                    { 6, "Mark Hamill, Harrison Ford", 1977, 9, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3480), 121, "Cassim", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Gary Kurtz", "Rachid", "George Lucas", "L'épopée galactique commence avec Luke Skywalker.", "Français, English", null, "Star Wars : Un nouvel espoir", "Star Wars: A New Hope" },
+                    { 7, "Liam Neeson, Ben Kingsley", 1993, 8, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3490), 195, "Cassim", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 2, "Steven Spielberg", "Rachid", "Steven Spielberg", "L'histoire vraie d'un industriel qui sauva des centaines de Juifs pendant la Seconde Guerre mondiale.", "Français, English", null, "La Liste de Schindler", "Schindler's List" },
+                    { 8, "Christian Bale, Heath Ledger", 2008, 1, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3500), 152, "Cassim", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Christopher Nolan", "Rachid", "Christopher Nolan", "Batman affronte le Joker dans un combat épique pour Gotham City.", "Français, English", null, "Le Chevalier Noir", "The Dark Knight" },
+                    { 9, "Russell Crowe, Joaquin Phoenix", 2000, 1, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3510), 155, "Cassim", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Douglas Wick", "Rachid", "Ridley Scott", "Un général romain trahi revient comme gladiateur pour se venger.", "Français, English", null, "Gladiator", "Gladiator" },
+                    { 10, "Sigourney Weaver, Tom Skerritt", 1979, 5, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3520), 117, "Cassim", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Walter Hill", "Rachid", "Ridley Scott", "Un équipage spatial affronte une créature extraterrestre mortelle.", "Français, English", null, "Alien", "Alien" },
+                    { 11, "Tom Hanks, Robin Wright", 1994, 3, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3530), 142, "Cassim", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Wendy Finerman", "Rachid", "Robert Zemeckis", "La vie extraordinaire de Forrest Gump, un homme avec un faible QI.", "Français, English", null, "Forrest Gump", "Forrest Gump" },
+                    { 12, "Jodie Foster, Anthony Hopkins", 1991, 5, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3530), 118, "Rachid", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Kenneth Utt", "Driss", "Jonathan Demme", "Une jeune agent du FBI cherche l'aide d'un tueur en série emprisonné.", "Français, English", null, "Le Silence des agneaux", "The Silence of the Lambs" },
+                    { 13, "Tim Robbins, Morgan Freeman", 1994, 3, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3540), 142, "Rachid", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Niki Marvin", "Driss", "Frank Darabont", "L'histoire d'un homme emprisonné qui se lie d'amitié avec un autre détenu.", "Français, English", null, "Les Évadés", "The Shawshank Redemption" },
+                    { 14, "Matthew Broderick, James Earl Jones", 1994, 2, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3550), 88, "Rachid", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Don Hahn", "Driss", "Roger Allers, Rob Minkoff", "L'histoire d'un lionceau qui devient roi après la mort de son père.", "Français, English", null, "Le Roi Lion", "The Lion King" },
+                    { 15, "Sam Neill, Laura Dern", 1993, 1, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3560), 127, "Rachid", true, false, true, "DVD", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Gerald R. Molen", "Driss", "Steven Spielberg", "Des scientifiques essaient de créer un parc avec des dinosaures vivants.", "Français, English", null, "Jurassic Park", "Jurassic Park" },
+                    { 16, "Ryan Gosling, Emma Stone", 2016, 7, new DateTime(2024, 9, 25, 0, 37, 32, 518, DateTimeKind.Local).AddTicks(3570), 128, "Rachid", true, false, true, "Blu-ray", "/wwwroot/img/icon1.jpg", "Anglais", "Cassim", 1, "Fred Berger", "Driss", "Damien Chazelle", "Un musicien et une actrice poursuivent leurs rêves.", "Français, English", null, "La La Land", "La La Land" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

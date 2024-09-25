@@ -22,7 +22,7 @@ namespace dvdApp.Models
 
         public string? MiseAJourEffectueePar { get; set; }
 
-        public List<string>? Supplements { get; set; } 
+        public string? Supplements { get; set; } 
 
         public int? Duree { get; set; }
 
@@ -40,13 +40,13 @@ namespace dvdApp.Models
 
         public string? Realisateur { get; set; }
 
-        public List<string>? ActeursPrincipaux { get; set; }
+        public string? ActeursPrincipaux { get; set; }
 
         public string? Resume { get; set; }
 
         public string? SousTitres { get; set; }
 
-        public string? Propriétaire { get; set; }
+        public string? Proprietaire { get; set; }
 
         public string? Emprunteur { get; set; }
 
@@ -55,12 +55,6 @@ namespace dvdApp.Models
         public bool EstVisible { get; set; }
 
         public virtual Categorie? Categorie { get; set; }
-
-        public Dvd()
-        {
-            ActeursPrincipaux = new List<string>();
-            Supplements = new List<string>();
-        }
     }
 }
 

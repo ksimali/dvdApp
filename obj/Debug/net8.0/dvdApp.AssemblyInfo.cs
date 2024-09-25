@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dvdApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6965f26825ee8066acfbb90e6538b20a1f893cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b3bfd16cefe5bacfd16c12df1c8f2de27eb63ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("dvdApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dvdApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
