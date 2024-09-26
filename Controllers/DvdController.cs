@@ -25,11 +25,49 @@ namespace dvdApp.Controllers
         }
 
         // GET: Dvd
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, string sortOrder)
         {
-            var applicationDbContext = _context.Dvds.Include(d => d.Categorie);
-            return View(await applicationDbContext.ToListAsync());
+            // Enregistre les paramètres de tri dans ViewData pour les conserver dans la vue
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParam"] = String.IsNullOrEmpty(sortOrder) ? "user" : "";
+            ViewData["TitleSortParam"] = sortOrder == "title" ? "title_desc" : "title";
+            ViewData["UserAndTitleSortParam"] = sortOrder == "user_title" ? "user_title_desc" : "user_title";
+
+            // Sélection initiale incluant les catégories
+            var dvdsWithCategories = from d in _context.Dvds.Include(d => d.Categorie)
+                                     select d;
+
+            // Recherche par titre (français ou original)
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                dvdsWithCategories = dvdsWithCategories.Where(d =>
+                    d.TitreOriginal.Contains(searchString) ||
+                    d.TitreFrancais.Contains(searchString) ||
+                    d.Categorie.Name.Contains(searchString));
+            }
+
+            // Tri des résultats selon les critères spécifiés
+            switch (sortOrder)
+            {
+                case "user":
+                    dvdsWithCategories = dvdsWithCategories.OrderBy(d => d.Emprunteur); // Tri par emprunteur
+                    break;
+                case "title":
+                    dvdsWithCategories = dvdsWithCategories.OrderBy(d => d.TitreFrancais); // Tri par titre
+                    break;
+                case "user_title":
+                    dvdsWithCategories = dvdsWithCategories
+                        .OrderBy(d => d.Emprunteur)
+                        .ThenBy(d => d.TitreFrancais); // Tri par emprunteur puis par titre
+                    break;
+                default:
+                    dvdsWithCategories = dvdsWithCategories.OrderBy(d => d.TitreFrancais); // Tri par défaut par titre
+                    break;
+            }
+
+            return View(await dvdsWithCategories.ToListAsync());
         }
+
 
         // GET: Dvd/DvdsEnMain
         public async Task<IActionResult> DvdsEnMain()
