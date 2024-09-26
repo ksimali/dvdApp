@@ -24,6 +24,37 @@ namespace dvdApp.Controllers
             _userManager = userManager; // Initialisez le UserManager
         }
 
+        // GET: User
+        public async Task<IActionResult> SelectUser()
+        {
+            // Récupère tous les utilisateurs
+            var users = await _userManager.Users.ToListAsync();
+
+            // Crée une liste de noms d'utilisateur pour le dropdown
+            var userList = users.Select(u => new SelectListItem
+            {
+                Value = u.UserName, // Utilisez le nom d'utilisateur comme valeur
+                Text = u.UserName
+            }).ToList();
+
+            ViewBag.Users = userList;
+
+            return View("UsersList", userList);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UserSelected(string userName)
+        {
+            // Récupère les DVDs empruntés par l'utilisateur sélectionné
+            var borrowedDvds = await _context.Dvds
+                .Where(d => d.Emprunteur == userName) // Filtrer par nom d'emprunteur
+                .ToListAsync();
+
+            // passer la liste des dvds et le username à la vue
+            ViewBag.SelectedUser = userName; // Utilisation de ViewBag pour passer le nom d'utilisateur
+            return View("DvdsEmprunteByUser", borrowedDvds); // Affiche la vue BorrowedDvds
+        }
+
         // GET: Dvd
         public async Task<IActionResult> Index(string searchString, string sortOrder)
         {

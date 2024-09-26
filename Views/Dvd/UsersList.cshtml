@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Sélectionner un utilisateur";
+}
+
+<h2>Sélectionner un utilisateur</h2>
+
+<form asp-action="UserSelected" method="post">
+    <div class="form-group">
+        <label for="userName">Choisissez un utilisateur</label>
+        <select id="userName" name="userName" class="form-control">
+            <option value="">-- Sélectionnez un utilisateur --</option>
+            @foreach (var user in ViewBag.Users)
+            {
+                <option value="@user.Value">@user.Text</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Afficher les DVDs empruntés</button>
+</form>
+
